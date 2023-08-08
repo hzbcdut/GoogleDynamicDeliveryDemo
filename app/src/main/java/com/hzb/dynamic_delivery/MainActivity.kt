@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -82,6 +83,8 @@ class MainActivity : AppCompatActivity() {
 //                该模块已安装在设备上。
                 SplitInstallSessionStatus.INSTALLED -> {
 
+                    Toast.makeText(this, "动态模块安装成功", Toast.LENGTH_SHORT).show()
+
                     // After a module is installed, you can start accessing its content or
                     // fire an intent to start an activity in the installed module.
                     // For other use cases, see access code and resources from installed modules.
@@ -125,9 +128,12 @@ class MainActivity : AppCompatActivity() {
             // request state changes and errors. To learn more, go to
             // the section about how to Monitor the request state.
             .addOnSuccessListener { sessionId ->
+                Toast.makeText(this, "开始下载", Toast.LENGTH_SHORT).show()
+
                 mySessionId = sessionId
             }
             .addOnFailureListener { exception ->
+                Log.i(TAG, "requestDynamicModule:  errorCode = ${(exception as SplitInstallException).errorCode}")
                 when ((exception as SplitInstallException).errorCode) {
 //                    由于出现网络连接错误，请求失败。
                     SplitInstallErrorCode.NETWORK_ERROR -> {
@@ -188,6 +194,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object{
-        const val DYNAMIC_MODULE_NAME = "video"
+        const val TAG = "MainActivity"
+        const val DYNAMIC_MODULE_NAME = "dynamicfeature"
     }
 }
