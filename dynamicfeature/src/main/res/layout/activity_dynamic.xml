@@ -4,22 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DynamicActivity">
 
-    <Button
-        android:id="@+id/requestDynamicModule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="请求动态模块"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <Button
-        android:id="@+id/useDynamicModule"
+    <TextView
+        android:id="@+id/textDynamic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requestDynamicModule"
-        android:text="访问功能模块中定义的Activity"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="动态模块资源"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
