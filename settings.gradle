@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "GoogleDynamicDeliveryDemo"
 include ':app'
 include ':dynamicfeature'
+include ':base'
+include ':common'
