@@ -15,7 +15,7 @@ import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListene
 import com.google.android.play.core.splitinstall.model.SplitInstallErrorCode
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseSplitActivity() {
 
 
     private val context: Context = this
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(
                     Intent()
                         .setClassName(
-                            "com.hzb.dynamicfeature",
+                            "com.hzb.dynamic_delivery",
                             "com.hzb.dynamicfeature.DynamicActivity"
                         )
                 )
@@ -107,6 +107,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * 下载动态模块
+     */
     private fun requestDynamicModule() {
 
 // Creates a request to install a module.
