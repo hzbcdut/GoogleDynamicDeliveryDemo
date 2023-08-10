@@ -22,7 +22,7 @@ class MainActivity : BaseSplitActivity() {
 
         // 下载功能模块
         findViewById<View>(R.id.requestDynamicModule).setOnClickListener {
-            dynamicModuleManager.requestDynamicModule()
+            dynamicModuleManager.requestDynamicModule(DYNAMIC_MODULE_NAME)
         }
 
         // 访问功能模块中的Activity

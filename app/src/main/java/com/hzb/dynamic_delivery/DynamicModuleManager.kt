@@ -80,7 +80,7 @@ class DynamicModuleManager(
     /**
      * 下载动态模块
      */
-    fun requestDynamicModule() {
+    fun requestDynamicModule(moduleName: String) {
 
 // Creates a request to install a module.
         val request =
@@ -89,7 +89,7 @@ class DynamicModuleManager(
                 // You can download multiple on demand modules per
                 // request by invoking the following method for each
                 // module you want to install.
-                .addModule(MainActivity.DYNAMIC_MODULE_NAME)
+                .addModule(moduleName)
                 .build()
 
         splitInstallManager
